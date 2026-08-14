@@ -174,21 +174,16 @@ export default function ListingDetailPage() {
           Array.isArray(data.images)
             ? data.images
                 .map(
-                  (
-                    image:
-                      | string
-                      | ListingImage
-                  ) =>
-                    typeof image === "string"
-                      ? image
-                      : image?.image_url || ""
-                )
-                .filter(
-                  (
-                    image
-                  ): image is string =>
-                    Boolean(image)
-                )
+  (
+    image:
+      | string
+      | ListingImage
+  ) =>
+    typeof image === "string"
+      ? image
+      : image?.image_url || ""
+)
+.filter(Boolean)
             : [];
 
         setListing({
