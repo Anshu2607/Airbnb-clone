@@ -1,6 +1,6 @@
 # Airbnb Clone
 
-[🚀 Live Demo](https://airbnb-clone-hrydof7mu-anshu2607s-projects.vercel.app/)
+[🚀 Live Demo](https://airbnb-clone-nine-livid.vercel.app/)
 
 A full-stack Airbnb-inspired accommodation booking platform built with **Next.js**, **React/TypeScript**, **FastAPI**, **Pydantic**, **SQLAlchemy**, and a relational database.
 
