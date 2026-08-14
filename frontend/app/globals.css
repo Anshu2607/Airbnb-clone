@@ -24,6 +24,7 @@ input {
   font-family: inherit;
 }
 
+
 button {
   border: none;
   background: none;
@@ -235,7 +236,6 @@ button {
   font-size: 13px;
   font-weight: 600;
 }
-
 /* =========================
    LISTINGS
 ========================= */
@@ -265,6 +265,7 @@ button {
 }
 
 .image-container img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -277,9 +278,14 @@ button {
 
 .favorite-button {
   position: absolute;
-  right: 13px;
   top: 13px;
+  right: 13px;
+  z-index: 2;
+
   color: white;
+  background: transparent;
+  border: none;
+
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
 }
 
@@ -291,11 +297,16 @@ button {
   position: absolute;
   top: 13px;
   left: 13px;
-  background: white;
+  z-index: 2;
+
   padding: 7px 10px;
+
+  background: white;
   border-radius: 20px;
+
   font-size: 12px;
   font-weight: 600;
+
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -303,13 +314,20 @@ button {
   position: absolute;
   right: 12px;
   bottom: 12px;
+  z-index: 2;
+
   width: 30px;
   height: 30px;
-  background: white;
-  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+
+  background: white;
+  border: none;
+  border-radius: 50%;
 }
 
 .listing-info {
@@ -320,10 +338,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 10px;
 }
 
 .listing-title-row h3 {
+  margin: 0;
+
   font-size: 15px;
   font-weight: 600;
 }
@@ -335,8 +356,10 @@ button {
 
 .listing-name {
   margin-top: 5px;
+
   font-size: 14px;
   color: #555555;
+
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -344,12 +367,14 @@ button {
 
 .listing-property {
   margin-top: 4px;
+
   font-size: 14px;
   color: #717171;
 }
 
 .listing-price {
   margin-top: 7px;
+
   font-size: 14px;
 }
 
@@ -357,26 +382,35 @@ button {
   font-size: 15px;
 }
 
+
 /* =========================
    PAGINATION
 ========================= */
 
 .pagination {
   margin-top: 50px;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   gap: 20px;
 }
 
 .pagination button {
   width: 38px;
   height: 38px;
-  border: 1px solid #dddddd;
-  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+
+  background: white;
 }
 
 .pagination button:disabled {
@@ -389,26 +423,32 @@ button {
   font-weight: 600;
 }
 
+
 /* =========================
    LOADING
 ========================= */
 
 .loading {
   min-height: 400px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: 15px;
+
   color: #717171;
 }
 
 .spinner {
   width: 35px;
   height: 35px;
+
   border: 3px solid #eeeeee;
   border-top-color: #ff385c;
   border-radius: 50%;
+
   animation: spin 0.8s linear infinite;
 }
 
@@ -418,35 +458,48 @@ button {
   }
 }
 
+
 /* =========================
    EMPTY STATE
 ========================= */
 
 .empty-state {
   min-height: 400px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   gap: 12px;
 }
 
 .empty-state h2 {
+  margin: 0;
+
   font-size: 24px;
 }
 
 .empty-state p {
+  margin: 0;
+
   color: #717171;
 }
 
 .empty-state button {
   margin-top: 10px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
   background: #222222;
   color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
+
   font-weight: 600;
 }
+
 
 /* =========================
    RESPONSIVE
@@ -464,6 +517,7 @@ button {
     padding-right: 30px;
   }
 }
+
 
 @media (max-width: 800px) {
   .navbar {
@@ -512,6 +566,7 @@ button {
   }
 }
 
+
 @media (max-width: 550px) {
   .logo {
     font-size: 25px;
@@ -530,417 +585,455 @@ button {
   }
 }
 
+
 /* =========================================
    LISTING DETAIL PAGE
 ========================================= */
 
-.detail-page {
+.listing-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 32px 24px 80px;
 }
 
-.detail-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #222;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.detail-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.detail-action-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.listing-back {
   border: none;
-  background: #f7f7f7;
-  border-radius: 10px;
-  padding: 10px 14px;
+  background: transparent;
+  color: #222;
+  font-size: 15px;
   cursor: pointer;
-  font-weight: 600;
-}
-
-.detail-action-button:hover {
-  background: #eeeeee;
-}
-
-.detail-header {
+  padding: 0;
   margin-bottom: 24px;
 }
 
-.detail-header h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
-.detail-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #555;
-}
-
-.detail-meta span:first-child {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.listing-header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
   color: #222;
 }
 
-/* PHOTO GALLERY */
+.listing-location {
+  margin: 0;
+  color: #717171;
+  font-size: 16px;
+}
 
-.photo-gallery {
-  height: 500px;
+.listing-rating {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  white-space: nowrap;
+}
+
+/* =========================================
+   IMAGE GALLERY
+========================================= */
+
+.image-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 12px;
+  width: 100%;
+  height: 520px;
+  margin-bottom: 48px;
+}
+
+.main-image-container {
+  position: relative;
+  min-width: 0;
+  height: 520px;
   overflow: hidden;
   border-radius: 16px;
-  margin-bottom: 40px;
+  background: #f3f3f3;
 }
 
-.gallery-main {
-  height: 100%;
-}
-
-.gallery-main img {
+.main-listing-image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.gallery-side {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.gallery-small {
-  overflow: hidden;
-}
-
-.gallery-small img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.gallery-placeholder {
-  grid-column: 1 / -1;
+.image-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #222;
+  font-size: 24px;
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f3f3f3;
-  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
-/* CONTENT */
+.image-arrow-left {
+  left: 16px;
+}
 
-.detail-content {
+.image-arrow-right {
+  right: 16px;
+}
+
+.image-thumbnails {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  min-width: 0;
+  height: 520px;
 }
 
-.detail-left {
+.thumbnail {
+  width: 100%;
+  min-width: 0;
+  height: 254px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+
+.thumbnail.active {
+  border-color: #222;
+}
+
+.thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.listing-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 64px;
+  align-items: start;
+}
+
+.listing-info {
   min-width: 0;
 }
 
-.host-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #ddd;
-}
-
-.host-section h2 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.host-section p {
-  color: #666;
-}
-
-.host-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #222;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.property-heading h2 {
+  margin: 0 0 6px;
   font-size: 24px;
-  font-weight: 700;
+  line-height: 1.3;
+  color: #222;
 }
 
-.detail-section {
-  padding: 32px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.detail-section h2 {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-.description {
-  color: #444;
-  line-height: 1.7;
+.property-heading p {
+  margin: 0;
   font-size: 16px;
+  color: #555;
 }
 
-/* AMENITIES */
+.listing-info hr {
+  border: none;
+  border-top: 1px solid #dddddd;
+  margin: 28px 0;
+}
 
-.amenities-grid {
+.description h2,
+.property-details h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+  color: #222;
+}
+
+.description p {
+  margin: 0;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 20px;
 }
 
-.amenity-item {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  font-size: 16px;
-}
-
-.amenity-item span {
-  font-weight: 700;
-}
-
-/* LOCATION */
-
-.location-box {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.location-box p {
-  color: #666;
-  margin-top: 5px;
-}
-
-.map-placeholder {
-  height: 300px;
-  border-radius: 16px;
-  background: #e8e8e8;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-}
-
-/* REVIEWS */
-
-.reviews-heading {
+.details-grid > div {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 25px;
+  min-width: 0;
+  font-size: 16px;
+  color: #333;
 }
 
-.reviews-heading h2 {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: 0;
+.details-grid span {
+  min-width: 0;
 }
 
-.reviews-heading span {
-  color: #555;
-}
+/* =========================================
+   BOOKING CARD
+========================================= */
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.review-card {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-}
-
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.review-card p {
-  color: #555;
-  line-height: 1.5;
-}
-
-/* BOOKING CARD */
-
-.booking-card {
+.listing-content > .booking-card {
   position: sticky;
   top: 100px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   height: fit-content;
   padding: 24px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
 }
 
-.booking-price {
-  margin-bottom: 20px;
+.listing-content > .booking-card .price {
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
 }
 
-.booking-price strong {
-  font-size: 24px;
-}
-
-.booking-box {
-  border: 1px solid #aaa;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.booking-box > div {
-  padding: 14px;
-  border-bottom: 1px solid #ddd;
-}
-
-.booking-box > div:last-child {
-  border-bottom: none;
-}
-
-.booking-box strong {
-  display: block;
-  font-size: 11px;
-}
-
-.booking-box p {
-  margin-top: 5px;
+.listing-content > .booking-card .price span {
+  font-size: 14px;
+  font-weight: 400;
   color: #555;
 }
 
-.booking-guests p {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+/* DATE INPUTS */
+
+.booking-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  border: 1px solid #b0b0b0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.reserve-button {
+.date-input {
+  min-width: 0;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+.date-input + .date-input {
+  border-left: 1px solid #b0b0b0;
+}
+
+.date-input label,
+.guest-input label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #222;
+}
+
+.date-input input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 2px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #222;
+  font-family: inherit;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+/* GUESTS */
+
+.guest-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px solid #b0b0b0;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.guest-input select {
   width: 100%;
   border: none;
-  background: #ff385c;
-  color: white;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 18px;
+  outline: none;
+  background: transparent;
+  color: #222;
+  font-family: inherit;
+  font-size: 14px;
   cursor: pointer;
 }
 
-.reserve-button:hover {
+/* RESERVE */
+
+.listing-content > .booking-card .reserve-button {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #ff385c;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.listing-content > .booking-card .reserve-button:hover {
   background: #e61e4d;
 }
 
-.no-charge {
-  text-align: center;
-  color: #666;
-  font-size: 13px;
-  margin: 12px 0 20px;
+.listing-content > .booking-card .reserve-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.price-breakdown {
+/* BOOKING MESSAGES */
+
+.booking-success,
+.booking-error {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
   font-size: 14px;
 }
 
-.price-breakdown > div {
+.booking-success {
+  background: #effff4;
+  color: #16803c;
+}
+
+.booking-error {
+  background: #fff0f0;
+  color: #c0392b;
+}
+
+/* PRICE BREAKDOWN */
+
+.listing-content > .booking-card .price-breakdown {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.listing-content > .booking-card .price-breakdown > div {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
   margin: 12px 0;
 }
 
-.price-breakdown hr {
+.listing-content > .booking-card .price-breakdown hr {
   border: none;
-  border-top: 1px solid #ddd;
-  margin: 20px 0;
+  border-top: 1px solid #dddddd;
+  margin: 18px 0;
 }
 
-.total-price {
+.listing-content > .booking-card .total-row {
   font-size: 16px;
 }
 
-/* LOADING / ERROR */
-
-.detail-loading,
-.detail-error {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.detail-error a {
-  color: #ff385c;
-}
-
-/* RESPONSIVE */
+/* =========================================
+   LISTING DETAIL RESPONSIVE
+========================================= */
 
 @media (max-width: 900px) {
-  .detail-content {
+  .listing-content {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .booking-card {
+  .listing-content > .booking-card {
     position: static;
   }
 
-  .photo-gallery {
-    height: 400px;
+  .image-gallery {
+    height: 420px;
+  }
+
+  .main-image-container {
+    height: 420px;
+  }
+
+  .image-thumbnails {
+    height: 420px;
+  }
+
+  .thumbnail {
+    height: 204px;
   }
 }
 
-@media (max-width: 600px) {
-  .detail-page {
-    padding: 16px;
+@media (max-width: 650px) {
+  .listing-page {
+    padding: 24px 16px 60px;
   }
 
-  .photo-gallery {
-    height: 300px;
+  .listing-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .listing-header h1 {
+    font-size: 26px;
+  }
+
+  .image-gallery {
     grid-template-columns: 1fr;
+    height: 320px;
   }
 
-  .gallery-side {
+  .main-image-container {
+    height: 320px;
+  }
+
+  .image-thumbnails {
     display: none;
   }
 
-  .detail-header h1 {
-    font-size: 22px;
-  }
-
-  .reviews-grid,
-  .amenities-grid {
+  .listing-content {
     grid-template-columns: 1fr;
   }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .date-input + .date-input {
+    border-left: none;
+    border-top: 1px solid #b0b0b0;
+  }
 }
+
 /* =========================
    BOOKING PAGE
 ========================= */
@@ -2768,7 +2861,7 @@ button {
   gap: 20px;
 }
 
-.booking-card {
+.bookings-list .booking-card {
   display: grid;
   grid-template-columns: 280px 1fr;
   border: 1px solid #ddd;
@@ -2922,9 +3015,9 @@ button {
     flex-direction: column;
   }
 
-  .booking-card {
-    grid-template-columns: 1fr;
-  }
+  .bookings-list .booking-card {
+  grid-template-columns: 1fr;
+}
 
   .booking-image,
   .booking-image img {

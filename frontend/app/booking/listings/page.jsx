@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const API_URL =
-    process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+    process.env.NEXT_PUBLIC_API_URL ||
+    "https://airbnb-clone-68mg.onrender.com";
 
 export default function BookingListingsPage() {
     const [listings, setListings] = useState([]);
